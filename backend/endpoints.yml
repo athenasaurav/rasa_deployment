@@ -11,7 +11,18 @@
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
 action_endpoint:
- url: "http://action_server:5055/webhook"
+ url: "http://action_server:9000/webhook"
+
+
+tracker_store:
+   type: sql
+   dialect: "postgresql"
+   url: 104.237.2.126
+   port: 5432
+   username: postgres
+   password: covid-bot
+   db: covid-chatbot
+   login_db: postgres
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
