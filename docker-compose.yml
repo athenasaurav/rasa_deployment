@@ -6,7 +6,7 @@ services:
       volumes:
         - ./nginx.conf:/etc/nginx/nginx.conf
       ports:
-        - 80:80
+        - 81:81
       depends_on: 
         - rasa
         - action_server
@@ -16,7 +16,7 @@ services:
       build: 
         context: backend
       ports: 
-        - "5005:5005"
+        - "5065:5065"
     action_server:
       container_name: "action_server"
       build: 
@@ -24,7 +24,7 @@ services:
       volumes:
         - ./actions:/app/actions
       ports:
-        - "5055:5055"  
+        - "9000:9000"  
     chatbot_ui:
       container_name: "chatbot_ui"
       build: 
